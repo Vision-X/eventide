@@ -1,5 +1,5 @@
 /**
- * @fileoverview 
+ * @fileoverview
  * This is our custom A-Frame component.
  * It is responsible for adding the outer wireframe mesh
  * and nodes to its vertices.

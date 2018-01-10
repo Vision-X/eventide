@@ -1,5 +1,5 @@
 /**
- * @fileoverview 
+ * @fileoverview
  * This is our main A-Frame application.
  * It defines the main A-Frame Scene which gets mounted root div.
  */
