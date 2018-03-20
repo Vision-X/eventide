@@ -1,11 +1,12 @@
 /**
- * @fileoverview 
+ * @fileoverview
  * This is our main A-Frame application.
  * It defines the main A-Frame Scene which gets mounted root div.
  */
 
-import { h, Component } from 'preact'
-import { Entity, Scene } from 'aframe-react'
+import { h, Component } from 'preact';
+import { Entity, Scene } from 'aframe-react';
+import { Shape } from './components/Shape';
 
 const COLORS = ['#D92B6A', '#9564F2', '#FFCF59']
 
@@ -15,7 +16,9 @@ class Main extends Component {
     this.state = {
       colorIndex: 0,
       spherePosition: { x: 0.0, y: 4, z: -10.0 }
+
     }
+    this._handleClick = this._handleClick.bind(this);
   }
 
   render() {
@@ -33,7 +36,7 @@ class Main extends Component {
         environment={{
           preset: 'starry',
           seed: 1,
-          lightPosition: { x: 200.0, y: 1.0, z: -50.0 },
+          lightPosition: { x: 200.0, y: 30.0, z: -50.0 },
           fog: 0.8,
           ground: 'canyon',
           groundYScale: 5.0,
@@ -58,26 +61,27 @@ class Main extends Component {
             to: { x: 3.0, y: 0.25, z: 0.0 }
           }}
         />
-
+        <Shape onClick={this._handleClick}/>
+        { /*
         <Entity
           class="clickable"
           lowpoly={{
             color: COLORS[this.state.colorIndex],
             nodes: true,
             opacity: 0.15,
-            wireframe: true
+            wireframe: false
           }}
-          primitive="a-octahedron"
+          primitive="a-cylinder"
           detail={2}
           events={{
             click: this._handleClick.bind(this)
           }}
-          radius={2}
+          radius={1}
           position={this.state.spherePosition}
           color="#FAFAF1"
           animation__rotate={{
             property: 'rotation',
-            dur: 60000,
+            dur: 6000,
             easing: 'linear',
             loop: true,
             to: { x: 0, y: 360, z: 0 }
@@ -90,12 +94,34 @@ class Main extends Component {
             loop: true,
             from: this.state.spherePosition,
             to: {
-              x: this.state.spherePosition.x,
-              y: this.state.spherePosition.y + 0.25,
-              z: this.state.spherePosition.z
+              x: this.state.spherePosition.x -.25,
+              y: this.state.spherePosition.y + 1.25,
+              z: this.state.spherePosition.z + .25
             }
           }}
-        />
+        /> */}
+
+      {/*  <a-entity class="clickable" onClick={this._handleClick.bind(this)}
+          geometry="primitive: box"
+          position="-2 0.5 -3"
+          rotation="0 45 0"
+          material="color: #4CC3D9" /> */}
+
+      {/*  <a-entity
+          geometry="primitive: sphere; radius: 1.25;"
+          position=".5 0 -3"
+          material="color: #EF2D5E" /> */}
+
+        <a-entity class="clickable" onClick={this._handleClick.bind(this)}
+          geometry="primitive: cylinder; radius: 0.5, height: 1.5"
+          position="0.5 0.75 -2"
+          material="color: #FFC65D" />
+
+      { /*  <a-entity
+          geometry="primitive: plane; width: 4; height: 4"
+          position="0 0 -4"
+          rotation="-90 0 0"
+          material="color: #7BC8A4" />  */}
 
         <Entity primitive="a-camera" look-controls>
           <Entity
@@ -121,6 +147,8 @@ class Main extends Component {
   }
 
   _handleClick() {
+    console.log("clicked");
+    console.log(event.target);
     this.setState({
       colorIndex: (this.state.colorIndex + 1) % COLORS.length
     })
