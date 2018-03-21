@@ -7,10 +7,16 @@
 import { h, Component } from 'preact';
 import { Entity, Scene } from 'aframe-react';
 import { Shape } from './components/Shape';
+import { Howl, Howler } from 'howler';
 import 'aframe-controller-cursor-component';
 import 'aframe-dev-components';
+// import kick1 from './assets/sounds/kick-1.wav';
 
-const COLORS = ['#D92B6A', '#9564F2', '#FFCF59']
+const COLORS = ['#D92B6A', '#9564F2', '#FFCF59'];
+const kick1 = new Howl({
+  src: ['./assets/sounds/kick-1.wav'],
+  autoplay: true
+});
 
 class Main extends Component {
   constructor() {
@@ -21,6 +27,7 @@ class Main extends Component {
 
     }
     this._handleClick = this._handleClick.bind(this);
+
   }
 
   render() {
@@ -69,6 +76,16 @@ class Main extends Component {
           <img src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" id="grid" crossorigin="anonymous" />
           <img src="https://img.gs/bbdkhfbzkk/2048x1024,stretch/http://i.imgur.com/WMNH2OF.jpg" id="chrome" crossorigin="anonymous" />
           <img id="sky" src="https://img.gs/bbdkhfbzkk/2048x2048,stretch/http://i.imgur.com/WqlqEkq.jpg" crossorigin="anonymous" />
+      { /*    <audio id="k3" src="./assets/sounds/kick-1" preload="auto" />
+      <a-asset-item id="k1" src="kick1" response-type="arraybuffer"></a-asset-item>
+          <audio id="k1" src="./assets/sounds/kick-1" preload="auto" />
+          <audio id="k2" src="./assets/sounds/kick-1" preload="auto" />
+          <audio id="s1" src="./assets/sounds/kick-1" preload="auto" />
+          <audio id="s2" src="./assets/sounds/kick-1" preload="auto" />
+          <audio id="s3" src="./assets/sounds/kick-1" preload="auto" />
+          <audio id="hh1" src="./assets/sounds/kick-1" preload="auto" />
+          <audio id="hh2" src="./assets/sounds/kick-1" preload="auto" />
+          <audio id="hh3" src="./assets/sounds/kick-1" preload="auto" /> */}
         </a-assets>
 
  /*        <a-entity oculus-touch-controls="hand: left"></a-entity>
@@ -86,7 +103,7 @@ class Main extends Component {
         <a-entity light="color: white; type: ambient;"></a-entity>
         <a-sky src="#sky" rotation="0 -90 0"></a-sky>
 
-        <Shape onClick={this._handleClick}/>
+        {/* <Shape onClick={this._handleClick}/> */}
         { /*
         <Entity
           class="clickable"
@@ -142,56 +159,57 @@ class Main extends Component {
           position="0.5 0.75 -2"
           material="color: #FFC65D" /> */}
 
-        <a-entity class="clickable" onClick={this.onClick}
+        <a-entity class="one clickable" onClick={this._handleClick.bind(this)}
           geometry="primitive: box; depth=0.2 height=0.5 width=0.5"
           position="0.5 0.5 -2"
           rotation="0 0 0"
-          material="color: #404" />
+          material="color: #104"
+          sound="src: kick1; on: click" />
 
-        <a-entity class="clickable" onClick={this.onClick}
+        <a-entity class="two clickable"
           geometry="primitive: box; depth=0.0 height=0.5 width=0.5"
           position="0.5 2 -2"
           rotation="0 0 0"
-          material="color: #404; metalness=1" />
+          material="color: #104; metalness=1" />
 
-        <a-entity class="clickable" onClick={this.onClick}
+        <a-entity class="three clickable" onClick={this._handleClick.bind(this)}
           geometry="primitive: box; depth=0.0 height=0.5 width=0.5"
           position="0.5 3.5 -2"
           rotation="0 0 0"
-          material="color: #404" />
+          material="color: #104" />
 ///////////////////////////////////////////////
-        <a-entity class="clickable" onClick={this.onClick}
+        <a-entity class="four clickable" onClick={this._handleClick.bind(this)}
           geometry="primitive: box; depth=0.0 height=0.5 width=0.5"
           position="2 0.5 -2"
           rotation="0 0 0"
           material="color: #404" />
 
-        <a-entity class="clickable" onClick={this.onClick}
+        <a-entity class="five clickable" onClick={this._handleClick.bind(this)}
           geometry="primitive: box; depth=0.0 height=0.5 width=0.5"
           position="2 2 -2"
           rotation="0 0 0"
           material="color: #404; metalness=1" />
 
-        <a-entity class="clickable" onClick={this.onClick}
+        <a-entity class="six clickable" onClick={this._handleClick.bind(this)}
           geometry="primitive: box; depth=0.0 height=0.5 width=0.5"
           position="2 3.5 -2"
           rotation="0 0 0"
           material="color: #404" />
 ///////////////////////////////////////////////
 
-        <a-entity class="clickable" onClick={this.onClick}
+        <a-entity class="seven clickable" onClick={this._handleClick.bind(this)}
           geometry="primitive: box; depth=0.0 height=0.5 width=0.5"
           position="3.5 0.5 -2"
           rotation="0 0 0"
           material="color: #404" />
 
-        <a-entity class="clickable" onClick={this.onClick}
+        <a-entity class="eight clickable" onClick={this._handleClick.bind(this)}
           geometry="primitive: box; depth=0.0 height=0.5 width=0.5"
           position="3.5 2 -2"
           rotation="0 0 0"
           material="color: #404; metalness=1" />
 
-        <a-entity class="clickable" onClick={this.onClick}
+        <a-entity class="nine clickable" onClick={this._handleClick.bind(this)}
           geometry="primitive: box; depth=0.0 height=0.5 width=0.5"
           position="3.5 3.5 -2"
           rotation="0 0 0"
@@ -230,9 +248,15 @@ class Main extends Component {
   _handleClick() {
     console.log("clicked");
     console.log(event.target);
-    this.setState({
-      colorIndex: (this.state.colorIndex + 1) % COLORS.length
-    })
+    var entity = document.querySelector('.one');
+    console.log("sounddd entity val: ", entity.components.sound);
+    console.log(kick1, "kick1");
+    kick1.play();
+    // entity.components.sound.stopSound();
+    // entity.components.sound.playSound();
+    // this.setState({
+    //   colorIndex: (this.state.colorIndex + 1) % COLORS.length
+    // })
   }
 }
 

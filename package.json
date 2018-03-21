@@ -20,6 +20,7 @@
     "aframe-event-set-component": "^3.0.3",
     "aframe-particle-system-component": "^1.0.10",
     "aframe-react": "^4.3.0",
+    "howler": "^2.0.9",
     "preact": "^8.1.0"
   },
   "devDependencies": {
