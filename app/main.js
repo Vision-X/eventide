@@ -137,10 +137,65 @@ class Main extends Component {
           position=".5 0 -3"
           material="color: #EF2D5E" /> */}
 
-        <a-entity class="clickable" onClick={this._handleClick.bind(this)}
+      { /*  <a-entity class="clickable" onClick={this._handleClick.bind(this)}
           geometry="primitive: cylinder; radius: 0.5, height: 1.5"
           position="0.5 0.75 -2"
-          material="color: #FFC65D" />
+          material="color: #FFC65D" /> */}
+
+        <a-entity class="clickable" onClick={this.onClick}
+          geometry="primitive: box; depth=0.2 height=0.5 width=0.5"
+          position="0.5 0.5 -2"
+          rotation="0 0 0"
+          material="color: #404" />
+
+        <a-entity class="clickable" onClick={this.onClick}
+          geometry="primitive: box; depth=0.0 height=0.5 width=0.5"
+          position="0.5 2 -2"
+          rotation="0 0 0"
+          material="color: #404; metalness=1" />
+
+        <a-entity class="clickable" onClick={this.onClick}
+          geometry="primitive: box; depth=0.0 height=0.5 width=0.5"
+          position="0.5 3.5 -2"
+          rotation="0 0 0"
+          material="color: #404" />
+///////////////////////////////////////////////
+        <a-entity class="clickable" onClick={this.onClick}
+          geometry="primitive: box; depth=0.0 height=0.5 width=0.5"
+          position="2 0.5 -2"
+          rotation="0 0 0"
+          material="color: #404" />
+
+        <a-entity class="clickable" onClick={this.onClick}
+          geometry="primitive: box; depth=0.0 height=0.5 width=0.5"
+          position="2 2 -2"
+          rotation="0 0 0"
+          material="color: #404; metalness=1" />
+
+        <a-entity class="clickable" onClick={this.onClick}
+          geometry="primitive: box; depth=0.0 height=0.5 width=0.5"
+          position="2 3.5 -2"
+          rotation="0 0 0"
+          material="color: #404" />
+///////////////////////////////////////////////
+
+        <a-entity class="clickable" onClick={this.onClick}
+          geometry="primitive: box; depth=0.0 height=0.5 width=0.5"
+          position="3.5 0.5 -2"
+          rotation="0 0 0"
+          material="color: #404" />
+
+        <a-entity class="clickable" onClick={this.onClick}
+          geometry="primitive: box; depth=0.0 height=0.5 width=0.5"
+          position="3.5 2 -2"
+          rotation="0 0 0"
+          material="color: #404; metalness=1" />
+
+        <a-entity class="clickable" onClick={this.onClick}
+          geometry="primitive: box; depth=0.0 height=0.5 width=0.5"
+          position="3.5 3.5 -2"
+          rotation="0 0 0"
+          material="color: #404" />
 
       { /*  <a-entity
           geometry="primitive: plane; width: 4; height: 4"
