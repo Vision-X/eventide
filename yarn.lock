@@ -31,6 +31,14 @@ aframe-bmfont-text-component@^0.1.4:
     object-assign "^4.1.0"
     three-bmfont-text "^2.1.0"
 
+aframe-controller-cursor-component@^0.2.7:
+  version "0.2.7"
+  resolved "https://registry.yarnpkg.com/aframe-controller-cursor-component/-/aframe-controller-cursor-component-0.2.7.tgz#80ed5aec6b8a58961a766cae0d9eb79a5f406534"
+
+aframe-dev-components@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/aframe-dev-components/-/aframe-dev-components-1.0.0.tgz#f9a43fa25ea67dab2e13b5869a9115dae06aae94"
+
 aframe-event-set-component@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/aframe-event-set-component/-/aframe-event-set-component-3.0.3.tgz#0b5556fefde3af81b55592e5f3c77e67fe2b76e2"

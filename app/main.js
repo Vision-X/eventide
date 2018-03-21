@@ -7,6 +7,8 @@
 import { h, Component } from 'preact';
 import { Entity, Scene } from 'aframe-react';
 import { Shape } from './components/Shape';
+import 'aframe-controller-cursor-component';
+import 'aframe-dev-components';
 
 const COLORS = ['#D92B6A', '#9564F2', '#FFCF59']
 
@@ -23,7 +25,7 @@ class Main extends Component {
 
   render() {
     return (
-      <Scene
+       /* <Scene
         effects="bloom, film, fxaa"
         fxaa
         bloom={{
@@ -60,7 +62,30 @@ class Main extends Component {
             from: { x: 2.5, y: 0.0, z: 0.0 },
             to: { x: 3.0, y: 0.25, z: 0.0 }
           }}
-        />
+        /> */
+      <a-scene>
+        <a-assets>
+          <img id="pink" src="https://img.gs/bbdkhfbzkk/stretch/http://i.imgur.com/1hyyIUi.jpg" crossorigin="anonymous" />
+          <img src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" id="grid" crossorigin="anonymous" />
+          <img src="https://img.gs/bbdkhfbzkk/2048x1024,stretch/http://i.imgur.com/WMNH2OF.jpg" id="chrome" crossorigin="anonymous" />
+          <img id="sky" src="https://img.gs/bbdkhfbzkk/2048x2048,stretch/http://i.imgur.com/WqlqEkq.jpg" crossorigin="anonymous" />
+        </a-assets>
+
+ /*        <a-entity oculus-touch-controls="hand: left"></a-entity>
+        <a-entity oculus-touch-controls="hand: right"></a-entity>
+        <a-entity id="teleHand" hand-controls="left"></a-entity>
+        <a-entity id="blockHand" hand-controls="right"></a-entity> */
+
+
+        <a-entity
+          geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0"
+          material="src: #grid; repeat: 10000 10000; transparent: true;metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"></a-entity>
+        <a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity>
+        <a-entity light="color: ffaaff; intensity: 1.5" position="5 5 5"></a-entity>
+        <a-entity light="color: white; intensity: 0.5" position="-5 5 15"></a-entity>
+        <a-entity light="color: white; type: ambient;"></a-entity>
+        <a-sky src="#sky" rotation="0 -90 0"></a-sky>
+
         <Shape onClick={this._handleClick}/>
         { /*
         <Entity
@@ -142,7 +167,8 @@ class Main extends Component {
             }}
           />
         </Entity>
-      </Scene>
+      {/*</Scene> */}
+    </a-scene>
     )
   }
 
