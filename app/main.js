@@ -11,6 +11,8 @@ import 'aframe-controller-cursor-component';
 import 'aframe-extras';
 import 'aframe-dev-components';
 import 'aframe-fps-counter-component';
+import 'aframe-teleport-controls';
+import 'laser-controls'
 
 const COLORS = ['#D92B6A', '#9564F2', '#FFCF59'];
 
@@ -23,6 +25,10 @@ class Main extends Component {
 
     }
     this._handleClick = this._handleClick.bind(this);
+
+  }
+
+  componentDidMount() {
 
   }
 
@@ -84,10 +90,22 @@ class Main extends Component {
           <audio id="hh3" src="./assets/sounds/kick-1" preload="auto" /> */}
         </a-assets>
 
-        <a-entity raycaster="objects: .clickable" oculus-touch-controls="hand: left" controller-cursor line="color: red; opacity: 0.5"></a-entity>
-        <a-entity oculus-touch-controls="hand: right"></a-entity>
+      {/*
         <a-entity id="teleHand" hand-controls="left"></a-entity>
         <a-entity id="blockHand" hand-controls="right"></a-entity>
+        <a-entity id="left-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+        <a-entity id="right-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+         <a-entity id="cameraRig">
+         <a-entity id="head" camera positon ="0 1.6 0" look-controls wasd-controls="#cameraRig;"></a-entity>
+         <a-entity teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;" oculus-touch-controls="hand: right"></a-entity>
+         </a-entity>
+         <a-entity id="left-hand" raycaster="objects: .clickable" oculus-touch-controls="hand: left" controller-cursor line="color: red; opacity: 0.5"></a-entity>
+         */}
+
+        <a-entity id="my-raycaster" raycaster="objects: .clickable" oculus-touch-controls="hand: left" controller-cursor="target: .clickable" ></a-entity>
+        <a-entity teleport-controls="startEvents: teleportstart; endEvents: teleportend; type: line">
+          <a-entity id="right-hand" oculus-touch-controls="hand: right; thumbstickdown:teleportstart; thumbstickup: teleportend;" id="right-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+        </a-entity>
 
 
         <a-entity
@@ -158,42 +176,42 @@ class Main extends Component {
 
         <a-entity collider-check class="one clickable" onClick={this._handleClick.bind(this)}
           geometry="primitive: box; depth=0.2 height=0.5 width=0.5"
-          position="0.5 0.5 -2"
+          position="0.5 0.5 -4"
           rotation="0 0 0"
           material="color: #104"
-          sound="src: url(/sounds/kick-1.wav); on: triggerdown" />
+          sound="src: url(/sounds/kick-1.wav); on: click" />
 
         <a-entity class="two clickable"
           geometry="primitive: box; depth=0.0 height=0.5 width=0.5"
-          position="0.5 2 -2"
+          position="0.5 2 -4"
           rotation="0 0 0"
           material="color: #104"
           sound="src: url(/sounds/kick-2.wav); on: click" />
 
         <a-entity class="three clickable" onClick={this._handleClick.bind(this)}
           geometry="primitive: box; depth=0.0 height=0.5 width=0.5"
-          position="0.5 3.5 -2"
+          position="0.5 3.5 -4"
           rotation="0 0 0"
           material="color: #104"
           sound="src: url(/sounds/kick-3.wav); on: click"  />
 ///////////////////////////////////////////////
         <a-entity class="four clickable" onClick={this._handleClick.bind(this)}
           geometry="primitive: box; depth=0.0 height=0.5 width=0.5"
-          position="2 0.5 -2"
+          position="2 0.5 -4"
           rotation="0 0 0"
           material="color: #404"
           sound="src: url(/sounds/snare-1.wav); on: click" />
 
         <a-entity class="five clickable" onClick={this._handleClick.bind(this)}
           geometry="primitive: box; depth=0.0 height=0.5 width=0.5"
-          position="2 2 -2"
+          position="2 2 -4"
           rotation="0 0 0"
           material="color: #404"
           sound="src: url(/sounds/snare-2.wav); on: click" />
 
         <a-entity class="six clickable" onClick={this._handleClick.bind(this)}
           geometry="primitive: box; depth=0.0 height=0.5 width=0.5"
-          position="2 3.5 -2"
+          position="2 3.5 -4"
           rotation="0 0 0"
           material="color: #404"
           sound="src: url(/sounds/snare-3.wav); on: click" />
@@ -201,21 +219,21 @@ class Main extends Component {
 
         <a-entity class="seven clickable" onClick={this._handleClick.bind(this)}
           geometry="primitive: box; depth=0.0 height=0.5 width=0.5"
-          position="3.5 0.5 -2"
+          position="3.5 0.5 -4"
           rotation="0 0 0"
           material="color: #EEE"
           sound="src: url(/sounds/E808_CH-03.wav); on: click" />
 
         <a-entity class="eight clickable" onClick={this._handleClick.bind(this)}
           geometry="primitive: box; depth=0.0 height=0.5 width=0.5"
-          position="3.5 2 -2"
+          position="3.5 2 -4"
           rotation="0 0 0"
           material="color: #EEE"
           sound="src: url(/sounds/E808_CH-07.wav); on: click" />
 
         <a-entity class="nine clickable" onClick={this._handleClick.bind(this)}
           geometry="primitive: box; depth=0.0 height=0.5 width=0.5"
-          position="3.5 3.5 -2"
+          position="3.5 3.5 -4"
           rotation="0 0 0"
           material="color: #EEE"
           sound="src: url(/sounds/E808_OH-07.wav); on: click" />
@@ -256,6 +274,13 @@ class Main extends Component {
     var entity = document.querySelector('.one');
     console.log("sounddd entity val: ", entity.components.sound);
     console.log("triggerdown");
+    var caster = document.querySelector('#my-raycaster')
+    var raycaster = document.querySelector('#my-raycaster').components.raycaster;
+    var cubes = document.querySelectorAll('.clickable');
+    cubes.components.raycaster.refreshObjects();
+    cubes.addEventListener("model-loaded", () => {
+      raycaster.refreshObjects();
+    })
     // entity.components.sound.stopSound();
     // entity.components.sound.playSound();
     // this.setState({
