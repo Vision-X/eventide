@@ -201,19 +201,22 @@ class Main extends Component {
           geometry="primitive: box; depth=0.0 height=0.5 width=0.5"
           position="3.5 0.5 -2"
           rotation="0 0 0"
-          material="color: #808" />
+          material="color: #808"
+          sound="src: url(/sounds/E808_CH-03.wav); on: click" />
 
         <a-entity class="eight clickable" onClick={this._handleClick.bind(this)}
           geometry="primitive: box; depth=0.0 height=0.5 width=0.5"
           position="3.5 2 -2"
           rotation="0 0 0"
-          material="color: #808" />
+          material="color: #808"
+          sound="src: url(/sounds/E808_CH-07.wav); on: click" />
 
         <a-entity class="nine clickable" onClick={this._handleClick.bind(this)}
           geometry="primitive: box; depth=0.0 height=0.5 width=0.5"
           position="3.5 3.5 -2"
           rotation="0 0 0"
-          material="color: #808" />
+          material="color: #808"
+          sound="src: url(/sounds/E808_OH-07.wav); on: click" />
 
       { /*  <a-entity
           geometry="primitive: plane; width: 4; height: 4"
