@@ -12,7 +12,7 @@ import 'aframe-extras';
 import 'aframe-dev-components';
 import 'aframe-fps-counter-component';
 import 'aframe-teleport-controls';
-import 'laser-controls'
+
 
 const COLORS = ['#D92B6A', '#9564F2', '#FFCF59'];
 
@@ -102,10 +102,10 @@ class Main extends Component {
          <a-entity id="left-hand" raycaster="objects: .clickable" oculus-touch-controls="hand: left" controller-cursor line="color: red; opacity: 0.5"></a-entity>
          */}
 
-        <a-entity id="my-raycaster" raycaster="objects: .clickable" oculus-touch-controls="hand: left" controller-cursor="target: .clickable" ></a-entity>
-        <a-entity teleport-controls="startEvents: teleportstart; endEvents: teleportend; type: line">
-          <a-entity id="right-hand" oculus-touch-controls="hand: right; thumbstickdown:teleportstart; thumbstickup: teleportend;" id="right-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
-        </a-entity>
+        <a-entity id="my-raycaster" raycaster="objects: .clickable" line="color: blue;" oculus-touch-controls="hand: left" laser-controls="hand: left; objects: .clickable"></a-entity>
+        <a-entity teleport-controls="startEvents: teleportstart; endEvents: teleportend; type: line"></a-entity>
+        <a-entity id="right-hand" oculus-touch-controls="hand: right; thumbstickdown:teleportstart; thumbstickup: teleportend;" id="right-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+
 
 
         <a-entity
