@@ -10,6 +10,7 @@ import { Shape } from './components/Shape';
 import 'aframe-controller-cursor-component';
 import 'aframe-extras';
 import 'aframe-dev-components';
+import 'aframe-fps-counter-component';
 
 const COLORS = ['#D92B6A', '#9564F2', '#FFCF59'];
 
@@ -93,10 +94,11 @@ class Main extends Component {
           geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0"
           material="src: #grid; repeat: 10000 10000; transparent: true;metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"></a-entity>
         <a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity>
-        <a-entity light="color: ffaaff; intensity: 1.5" position="5 5 5"></a-entity>
+        <a-entity light="color: #ffaaff; intensity: 1.5" position="5 5 5"></a-entity>
         <a-entity light="color: white; intensity: 0.5" position="-5 5 15"></a-entity>
         <a-entity light="color: white; type: ambient;"></a-entity>
         <a-sky src="#sky" rotation="0 -90 0"></a-sky>
+        <a-entity fps-counter></a-entity>
 
         {/* <Shape onClick={this._handleClick}/> */}
         { /*
@@ -201,21 +203,21 @@ class Main extends Component {
           geometry="primitive: box; depth=0.0 height=0.5 width=0.5"
           position="3.5 0.5 -2"
           rotation="0 0 0"
-          material="color: #808"
+          material="color: #EEE"
           sound="src: url(/sounds/E808_CH-03.wav); on: click" />
 
         <a-entity class="eight clickable" onClick={this._handleClick.bind(this)}
           geometry="primitive: box; depth=0.0 height=0.5 width=0.5"
           position="3.5 2 -2"
           rotation="0 0 0"
-          material="color: #808"
+          material="color: #EEE"
           sound="src: url(/sounds/E808_CH-07.wav); on: click" />
 
         <a-entity class="nine clickable" onClick={this._handleClick.bind(this)}
           geometry="primitive: box; depth=0.0 height=0.5 width=0.5"
           position="3.5 3.5 -2"
           rotation="0 0 0"
-          material="color: #808"
+          material="color: #EEE"
           sound="src: url(/sounds/E808_OH-07.wav); on: click" />
 
       { /*  <a-entity
