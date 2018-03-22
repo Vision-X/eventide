@@ -18,9 +18,9 @@
     "aframe-controller-cursor-component": "^0.2.7",
     "aframe-dev-components": "^1.0.0",
     "aframe-event-set-component": "^3.0.3",
+    "aframe-extras": "^3.13.1",
     "aframe-particle-system-component": "^1.0.10",
     "aframe-react": "^4.3.0",
-    "howler": "^2.0.9",
     "preact": "^8.1.0"
   },
   "devDependencies": {
