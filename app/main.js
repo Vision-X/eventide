@@ -184,8 +184,8 @@ class Main extends Component {
           rotation="0 0 0"
           material="color: #104"
           sound="src: url(/sounds/kick-1.wav); poolSize: 10; on: mousedown">
-          <a-animation attribute="material.color" begin="mousedown" from="lightblue" to="#104" dur="175"></a-animation>
-          <a-animation attribute="rotation" begin="mousedown" dur="175" fill="forwards" to="0 90 0"></a-animation>
+          <a-animation attribute="material.color" begin="mousedown" from="lightblue" to="#104" dur="100"></a-animation>
+          <a-animation attribute="rotation" begin="mousedown" dur="100" fill="forwards" to="0 90 0"></a-animation>
         </a-entity>
 
         <a-entity class="two clickable"
@@ -194,8 +194,8 @@ class Main extends Component {
           rotation="0 0 0"
           material="color: #104"
           sound="src: url(/sounds/kick-2.wav); poolSize: 10; on: mousedown">
-          <a-animation attribute="material.color" begin="mousedown" from="lightblue" to="#104" dur="175"></a-animation>
-          <a-animation attribute="rotation" begin="mousedown" dur="175" fill="forwards" to="0 90 0"></a-animation>
+          <a-animation attribute="material.color" begin="mousedown" from="lightblue" to="#104" dur="100"></a-animation>
+          <a-animation attribute="rotation" begin="mousedown" dur="100" fill="forwards" to="0 90 0"></a-animation>
         </a-entity>
 
         <a-entity class="three clickable" onClick={this._handleClick.bind(this)}
@@ -204,8 +204,8 @@ class Main extends Component {
           rotation="0 0 0"
           material="color: #104"
           sound="src: url(/sounds/kick-3.wav); poolSize: 10; on: mousedown">
-          <a-animation attribute="material.color" begin="mousedown" from="lightblue" to="#104" dur="175"></a-animation>
-          <a-animation attribute="rotation" begin="mousedown" dur="175" fill="forwards" to="0 90 0"></a-animation>
+          <a-animation attribute="material.color" begin="mousedown" from="lightblue" to="#104" dur="100"></a-animation>
+          <a-animation attribute="rotation" begin="mousedown" dur="100" fill="forwards" to="0 90 0"></a-animation>
         </a-entity>
 ///////////////////////////////////////////////
         <a-entity class="four clickable" onClick={this._handleClick.bind(this)}
@@ -214,8 +214,8 @@ class Main extends Component {
           rotation="0 0 0"
           material="color: #404"
           sound="src: url(/sounds/snare-1.wav); poolSize: 10; mousedown">
-          <a-animation attribute="material.color" begin="mousedown" from="red" to="#404" dur="175"></a-animation>
-          <a-animation attribute="rotation" begin="mousedown" dur="175" fill="forwards" to="0 90 0"></a-animation>
+          <a-animation attribute="material.color" begin="mousedown" from="red" to="#404" dur="100"></a-animation>
+          <a-animation attribute="rotation" begin="mousedown" dur="100" fill="forwards" to="0 90 0"></a-animation>
         </a-entity>
 
         <a-entity class="five clickable" onClick={this._handleClick.bind(this)}
@@ -224,8 +224,8 @@ class Main extends Component {
           rotation="0 0 0"
           material="color: #404"
           sound="src: url(/sounds/snare-2.wav); poolSize: 10; on: mousedown">
-          <a-animation attribute="material.color" begin="mousedown" from="red" to="#404" dur="175"></a-animation>
-          <a-animation attribute="rotation" begin="mousedown" dur="175" fill="forwards" to="0 90 0"></a-animation>
+          <a-animation attribute="material.color" begin="mousedown" from="red" to="#404" dur="100"></a-animation>
+          <a-animation attribute="rotation" begin="mousedown" dur="100" fill="forwards" to="0 90 0"></a-animation>
         </a-entity>
 
         <a-entity class="six clickable" onClick={this._handleClick.bind(this)}
@@ -264,8 +264,7 @@ class Main extends Component {
           position="3.5 3.5 -4"
           rotation="0 0 0"
           material="color: #EEE"
-          sound="src: url(/sounds/E808_OH-07.wav); poolSize: 10; on: mousedown"
-          rotation="90 0 45; on: mouseenter">
+          sound="src: url(/sounds/E808_OH-07.wav); poolSize: 10; on: mousedown">
           <a-animation attribute="material.color" begin="mousedown" from="purple" to="#EEE" dur="250"></a-animation>
           <a-animation attribute="rotation" begin="mousedown" dur="250" fill="forwards" to="0 90 0"></a-animation>
         </a-entity>
