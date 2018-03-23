@@ -174,7 +174,9 @@ class Main extends Component {
       { /*  <a-entity class="clickable" onClick={this._handleClick.bind(this)}
           geometry="primitive: cylinder; radius: 0.5, height: 1.5"
           position="0.5 0.75 -2"
+          <a-entity audio-visualizer="src: url(/sounds/kick-1.wav)" audio-visualizer-kick></a-entity>
           material="color: #FFC65D" /> */}
+
 
         <a-entity collider-check class="one clickable" onClick={this._handleClick.bind(this)}
           geometry="primitive: box; depth=0.2 height=0.5 width=0.5"
@@ -182,8 +184,8 @@ class Main extends Component {
           rotation="0 0 0"
           material="color: #104"
           sound="src: url(/sounds/kick-1.wav); poolSize: 10; on: mousedown">
-          <a-animation attribute="material.color" begin="click" from="lightblue" to="#104" dur="175"></a-animation>
-          <a-animation attribute="rotation" begin="click" dur="175" fill="forwards" to="0 90 0"></a-animation>
+          <a-animation attribute="material.color" begin="mousedown" from="lightblue" to="#104" dur="175"></a-animation>
+          <a-animation attribute="rotation" begin="mousedown" dur="175" fill="forwards" to="0 90 0"></a-animation>
         </a-entity>
 
         <a-entity class="two clickable"
@@ -192,8 +194,8 @@ class Main extends Component {
           rotation="0 0 0"
           material="color: #104"
           sound="src: url(/sounds/kick-2.wav); poolSize: 10; on: mousedown">
-          <a-animation attribute="material.color" begin="click" from="lightblue" to="#104" dur="175"></a-animation>
-          <a-animation attribute="rotation" begin="click" dur="175" fill="forwards" to="0 90 0"></a-animation>
+          <a-animation attribute="material.color" begin="mousedown" from="lightblue" to="#104" dur="175"></a-animation>
+          <a-animation attribute="rotation" begin="mousedown" dur="175" fill="forwards" to="0 90 0"></a-animation>
         </a-entity>
 
         <a-entity class="three clickable" onClick={this._handleClick.bind(this)}
@@ -202,8 +204,8 @@ class Main extends Component {
           rotation="0 0 0"
           material="color: #104"
           sound="src: url(/sounds/kick-3.wav); poolSize: 10; on: mousedown">
-          <a-animation attribute="material.color" begin="click" from="lightblue" to="#104" dur="175"></a-animation>
-          <a-animation attribute="rotation" begin="click" dur="175" fill="forwards" to="0 90 0"></a-animation>
+          <a-animation attribute="material.color" begin="mousedown" from="lightblue" to="#104" dur="175"></a-animation>
+          <a-animation attribute="rotation" begin="mousedown" dur="175" fill="forwards" to="0 90 0"></a-animation>
         </a-entity>
 ///////////////////////////////////////////////
         <a-entity class="four clickable" onClick={this._handleClick.bind(this)}
@@ -212,8 +214,8 @@ class Main extends Component {
           rotation="0 0 0"
           material="color: #404"
           sound="src: url(/sounds/snare-1.wav); poolSize: 10; mousedown">
-          <a-animation attribute="material.color" begin="click" from="red" to="#404" dur="175"></a-animation>
-          <a-animation attribute="rotation" begin="click" dur="175" fill="forwards" to="0 90 0"></a-animation>
+          <a-animation attribute="material.color" begin="mousedown" from="red" to="#404" dur="175"></a-animation>
+          <a-animation attribute="rotation" begin="mousedown" dur="175" fill="forwards" to="0 90 0"></a-animation>
         </a-entity>
 
         <a-entity class="five clickable" onClick={this._handleClick.bind(this)}
@@ -222,8 +224,8 @@ class Main extends Component {
           rotation="0 0 0"
           material="color: #404"
           sound="src: url(/sounds/snare-2.wav); poolSize: 10; on: mousedown">
-          <a-animation attribute="material.color" begin="click" from="red" to="#404" dur="175"></a-animation>
-          <a-animation attribute="rotation" begin="click" dur="175" fill="forwards" to="0 90 0"></a-animation>
+          <a-animation attribute="material.color" begin="mousedown" from="red" to="#404" dur="175"></a-animation>
+          <a-animation attribute="rotation" begin="mousedown" dur="175" fill="forwards" to="0 90 0"></a-animation>
         </a-entity>
 
         <a-entity class="six clickable" onClick={this._handleClick.bind(this)}
@@ -232,8 +234,8 @@ class Main extends Component {
           rotation="0 0 0"
           material="color: #404"
           sound="src: url(/sounds/snare-3.wav); poolSize: 10; on: mousedown">
-          <a-animation attribute="material.color" begin="click" from="red" to="#404" dur="250"></a-animation>
-          <a-animation attribute="rotation" begin="click" dur="250" fill="forwards" to="0 90 0"></a-animation>
+          <a-animation attribute="material.color" begin="mousedown" from="red" to="#404" dur="250"></a-animation>
+          <a-animation attribute="rotation" begin="mousedown" dur="250" fill="forwards" to="0 90 0"></a-animation>
         </a-entity>
 ///////////////////////////////////////////////
 
@@ -243,8 +245,8 @@ class Main extends Component {
           rotation="0 0 0"
           material="color: #EEE"
           sound="src: url(/sounds/E808_CH-03.wav); poolSize: 10; on: mousedown">
-          <a-animation attribute="material.color" begin="click" from="purple" to="#EEE" dur="250"></a-animation>
-          <a-animation attribute="rotation" begin="click" dur="250" fill="forwards" to="0 90 0"></a-animation>
+          <a-animation attribute="material.color" begin="mousedown" from="purple" to="#EEE" dur="250"></a-animation>
+          <a-animation attribute="rotation" begin="mousedown" dur="250" fill="forwards" to="0 90 0"></a-animation>
         </a-entity>
 
         <a-entity class="eight clickable" onClick={this._handleClick.bind(this)}
@@ -253,8 +255,8 @@ class Main extends Component {
           rotation="0 0 0"
           material="color: #EEE"
           sound="src: url(/sounds/E808_CH-07.wav); poolSize: 10; on: mousedown">
-          <a-animation attribute="material.color" begin="click" from="purple" to="#EEE" dur="250"></a-animation>
-          <a-animation attribute="rotation" begin="click" dur="250" fill="forwards" to="0 90 0"></a-animation>
+          <a-animation attribute="material.color" begin="mousedown" from="purple" to="#EEE" dur="250"></a-animation>
+          <a-animation attribute="rotation" begin="mousedown" dur="250" fill="forwards" to="0 90 0"></a-animation>
         </a-entity>
 
         <a-entity class="nine clickable" onClick={this._handleClick.bind(this)}
@@ -264,8 +266,8 @@ class Main extends Component {
           material="color: #EEE"
           sound="src: url(/sounds/E808_OH-07.wav); poolSize: 10; on: mousedown"
           rotation="90 0 45; on: mouseenter">
-          <a-animation attribute="material.color" begin="click" from="purple" to="#EEE" dur="250"></a-animation>
-          <a-animation attribute="rotation" begin="click" dur="250" fill="forwards" to="0 90 0"></a-animation>
+          <a-animation attribute="material.color" begin="mousedown" from="purple" to="#EEE" dur="250"></a-animation>
+          <a-animation attribute="rotation" begin="mousedown" dur="250" fill="forwards" to="0 90 0"></a-animation>
         </a-entity>
 
       { /*  <a-entity
